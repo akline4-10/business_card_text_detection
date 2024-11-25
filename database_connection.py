@@ -44,7 +44,7 @@ class DBManager():
         if len(company) == 1:
             values[0] = int(company.loc[0,'CompanyID'])
         else:
-            mask = company[["Street", "City", "State", "ZipCode"]] == values[2:6]
+            mask = company[["Street", "City", "State", "ZipCode"]] == values[3:7]
             idx = int(mask.sum(axis=1).argmax())
             values[0] = int(company.loc[idx,'CompanyID'])
         print(tuple(values))
